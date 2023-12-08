@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 function Contact() {
     const [name, setName]=useState("")
     const [email, setEmail]=useState("")
@@ -22,6 +22,7 @@ function Contact() {
       
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       
+    handleReset()
    
 
     }
@@ -41,19 +42,19 @@ function Contact() {
         <form onSubmit={e=>handleSubmit(e)} name='submit-to-google-sheet' className='border-2 py-4 px-6 rounded-3xl'>
             <div className='flex flex-col'>
             <label  className=' font-semibold text-lg'>Name:</label>
-            <input type="text" name='Name' className=' bg-gray-100 h-9 rounded-lg' onChange={(e)=>setName(e.target.value)}/>
+            <input type="text" name='Name' className=' bg-gray-100 h-9 rounded-lg' value={name} onChange={(e)=>setName(e.target.value)}/>
             </div>
             <div className='flex flex-col my-4'>
             <label className=' font-semibold text-lg'>Email:</label>
-            <input type="email" name='Email' className='bg-gray-100 h-9 rounded-lg ' onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="email" name='Email' className='bg-gray-100 h-9 rounded-lg ' value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </div>
             <div className='flex flex-col'>
             <label  className=' font-semibold text-lg'>Subject:</label>
-            <input type="text" name='Subject' className='bg-gray-100 h-9 rounded-lg ' onChange={(e)=>setSubject(e.target.value)}/>
+            <input type="text" name='Subject' className='bg-gray-100 h-9 rounded-lg ' value={subject} onChange={(e)=>setSubject(e.target.value)}/>
             </div>
             <div className='flex flex-col my-5'>
-            <label className=' font-semibold text-lg' onChange={(e)=>setMessage(e.target.value)}>Message:</label>
-            <textarea name='Message' className='bg-gray-100 rounded-lg '/>
+            <label className=' font-semibold text-lg' >Message:</label>
+            <textarea name='Message' className='bg-gray-100 rounded-lg ' value={message} onChange={(e)=>setMessage(e.target.value)}/>
             
             </div>
             <div className='flex gap-4 items-center mb-4'>
