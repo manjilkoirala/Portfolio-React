@@ -10,9 +10,9 @@ const Header = () => {
       </div>
       <div className="flex gap-8 items-center text-gray-700 text-xl">
        
-        <Link to="/portfolio-react" className=" hover:text-black">Home</Link>
-        <Link to="/portfolio-react/Projects" className=" hover:text-black">Project</Link>
-        <Link to="/portfolio-react/Contact" className=" hover:text-black">Contact</Link>
+        <Link to="/" className=" hover:text-black">Home</Link>
+        <Link to="/Projects" className=" hover:text-black">Project</Link>
+        <Link to="/Contact" className=" hover:text-black">Contact</Link>
       </div>
     </nav>
   );

@@ -15,10 +15,10 @@ import App from "./App";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/portfolio-react" element={<App />}>
-      <Route path="/portfolio-react" element={<Hero />} />
-      <Route path="/portfolio-react/Projects" element={<Project />} />
-      <Route path="/portfolio-react/Contact" element={<Contact />} />
+    <Route path="/" element={<App />}>
+      <Route path="" element={<Hero />} />
+      <Route path="Projects" element={<Project />} />
+      <Route path="Contact" element={<Contact />} />
       
     </Route>
   )
