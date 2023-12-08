@@ -1,4 +1,6 @@
 import React, {  useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 function Contact() {
     const [name, setName]=useState("")
     const [email, setEmail]=useState("")
@@ -20,8 +22,10 @@ function Contact() {
         const form = document.forms['submit-to-google-sheet']
         e.preventDefault();
       
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)}).then(response => toast("Sent"))
+    .catch(error => console.error(toast("Not Sent")))
+    
+    
     handleReset()
    
 
@@ -59,6 +63,7 @@ function Contact() {
             </div>
             <div className='flex gap-4 items-center mb-4'>
                 <button type='submit' className='border-2 border-black rounded-sm px-5 py-3 text-2xl hover:bg-gray-100'>Send</button>
+                <ToastContainer/>
                 <button type='reset' className='border-2 border-black rounded-sm px-5 py-3 text-2xl hover:bg-gray-100' onClick={handleReset}>Reset</button>
             </div>
         </form>
