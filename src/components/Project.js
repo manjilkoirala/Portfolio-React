@@ -5,7 +5,7 @@ import passwordGenerator from "../assets/passwordGenerator.jpg";
 
 const Project = () => {
   return (
-    <section className="xl:h-[100vh] h-[100%] flex items-center flex-col">
+    <section className="xl:h-[100vh] flex items-center flex-col">
       <h2 className=" my-16 font-bold text-4xl bg-slate-600 text-white py-4 px-16 rounded-xl">
         Projects
       </h2>
